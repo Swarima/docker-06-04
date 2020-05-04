@@ -1,0 +1,54 @@
+        Docker
+
+1. Normally installation can be done for versions of windows 10 and 64 bit enterprise edition in rest cases docker tool box can be used.
+2. Else play with docker can be used and images can be pull from dochub.///https://hub.docker.com/_/tomcat,https://labs.play-with-docker.com/
+3. Get the image from docker and then pull it from the dochub and then we run the container ,
+here image refers to the class and container refers to the object.
+
+
+4.docker version :- docker --version
+
+docker info :-
+
+docker run hello-world :- pulled image and created a container out of it
+
+docker run image-name
+
+
+
+[3:09 PM] Sharad Rajore
+    docker container run -p 2000:8080 -d --name tomcat tomcat:8.0
+​ then exec comd$
+
+  docker run -d -it openjdk:8-alpine
+commit is used to build image from the current container
+docker container commit  --change='CMD ["java","-jar","/tmp/hello-world.jar"]'  9faf62d05e26  hello-world:v5
+
+docker build . -t imagename:tag
+to push an image globally=1.docker login
+docker push dockerid/imagename====error
+2.docker tag hello-world:v5 dockerid/imagename:tag
+3.docker push dockerid/imagename:tag
+
+
+
+
+docker tag hello-world:v5 dockerid/imagename:tag -----keep on uploading new images with diff tags but here latest doesnot means that it is the latest version
+
+
+operation guy=docker container run -p 5050:5000 -d sharadrajore/hello-world:v5
+
+
+
+integrating image creation with maven goals ---- use plugins (spotify mvn plugin  --https://github.com/spotify/dockerfile-maven)
+fabric8 mvn plugin
+
+ADD vs COPY
+CMD vs ENTRYPOINT/RUN
+MAINTAINER
+ENV
+DOCKER CERTIFICATION----https://success.docker.com/certification
+
+https://bit.ly/39R0AYG----link for attendance
+
+docker  container run -d --name=mysql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=fullstack -e MYSQL_USER=test -e MYSQL_PASSWORD=root  -p 3306:3306 mysql:5.7
